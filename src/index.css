@@ -1,13 +1,43 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #fcfcfc;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.fa-car,
+.fa-shield-halved {
+  color: #df2020;
+}
+
+.fa-telegram {
+  color: white;
+  font-size: 30px;
+}
+
+.fa-facebook,
+.fa-github,
+.fa-instagram {
+  color: #df2020;
+  font-size: 20px;
+}
+
+.categroy_item {
+  transition: 0.4s;
+}
+
+.categroy_item:hover {
+  transform: translateY(-15px);
 }
