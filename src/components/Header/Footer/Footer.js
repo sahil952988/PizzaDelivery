@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="md:flex ">
 
           <div className='mt-5 md:ml-20 ml-5'>
-            <img className='w-16 ml-3' src={logo} alt="" />
+            <img className='pt-5 w-16 ml-3' src={logo} alt="" />
             <p className='font-bold '>Tasty Treat</p>
             <p className="mr-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quae.</p>
           </div>

@@ -41,3 +41,17 @@ a {
 .categroy_item:hover {
   transform: translateY(-15px);
 }
+
+.all_btn {
+  background-color: #fff !important;
+  border-radius: 5px;
+  color: #df2020;
+}
+
+.product_img {
+  transition: 0.4s;
+}
+
+.product_img:hover {
+  transform: scale(1.2);
+}
