@@ -1,4 +1,4 @@
-const AfterCategory = () => {
+const ThirdUi = () => {
   return (
     <>
       <div className="md:ml-[560px]">
@@ -16,4 +16,4 @@ const AfterCategory = () => {
     </>
   )
 }
-export default AfterCategory
+export default ThirdUi

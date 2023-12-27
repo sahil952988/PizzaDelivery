@@ -23,7 +23,7 @@ const featureData = [
 
 
 
-const FeaturesItem = () => {
+const FourthUi = () => {
   return (
     <>
       {
@@ -44,4 +44,4 @@ const FeaturesItem = () => {
     </>
   )
 }
-export default FeaturesItem
+export default FourthUi

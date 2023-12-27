@@ -2,15 +2,60 @@
 import Helmet from "../components/Helmet/Helmet"
 
 import FirstUi from "../components/UI/Category/FirstUI"
-import Category from "../components/UI/Category/Category"
-import AfterCategory from "../components/UI/Category/AfterCategory"
-import FeaturesItem from "../components/UI/Category/FeaturesItem"
+import SecondUi from "../components/UI/Category/SecondUi"
+import ThirdUi from "../components/UI/Category/ThirdUi"
+import FourthUi from "../components/UI/Category/FourthUi"
 import ProductCard from "../components/UI/Product-Card/ProductCard"
-import PopularFoodsUI from "../components/UI/Category/PopularFoodsUI"
+import { useEffect, useState } from "react"
+import products from "../Assets/fake-data/products"
+
+
+import foodCategoryImg01 from "../Assets/images/hamburger.png"
+import foodCategoryImg02 from "../Assets/images/pizza.png"
+import foodCategoryImg03 from "../Assets/images/bread.png"
+import FifthUi from "../components/UI/Category/FifthUi"
+
+
+
+
 
 
 
 const Home = () => {
+
+  const [category, setCategory] = useState("ALL");
+  const [allProducts, setAllProducts] = useState(products);
+
+  useEffect(() => {
+    if (category === "ALL") {
+      setAllProducts(products);
+    }
+
+    if (category === "BURGER") {
+      const filteredProducts = products.filter(
+        (item) => item.category === "Burger"
+      );
+
+      setAllProducts(filteredProducts);
+    }
+
+    if (category === "PIZZA") {
+      const filteredProducts = products.filter(
+        (item) => item.category === "Pizza"
+      );
+
+      setAllProducts(filteredProducts);
+    }
+
+    if (category === "BREAD") {
+      const filteredProducts = products.filter(
+        (item) => item.category === "Bread"
+      );
+
+      setAllProducts(filteredProducts);
+    }
+  }, [category]);
+
   return (
     <>
       <Helmet title="Home">
@@ -19,24 +64,44 @@ const Home = () => {
         </section>
 
         <section className=" Caterogy md:grid md:grid-cols-4 md:gap-4 grid grid-cols-2 gap-4 md:ml-[150px] ml-5 md:mr-[200px] mr-5 space-x-2">
-          <Category />
+          <SecondUi />
         </section>
 
         <section>
-          <AfterCategory />
+          <ThirdUi />
         </section>
 
         <span className="md:flex md:ml-[150px] md:mt-14">
-          <FeaturesItem />
+          <FourthUi />
         </span>
 
+        <div className="text-center i">
+          <h1 className="md:text-[33.6px] md:mt-16">Popular Foods</h1>
+        </div>
+
+        <div className="food_category bg-[#df2020]  flex space-x-10 justify-center rounded-[8px] md:ml-[100px] ml-2 md:mr-[100px] mr-2 ">
+
+          <button onClick={() => setCategory('ALL')} className="all_btn  pl-2 text-white cursor-pointer">All</button>
+
+          <button onClick={() => setCategory('BURGER')} className="flex py-7 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg01} alt="burger" />Burger</button>
+
+          <button onClick={() => setCategory('PIZZA')} className="flex py-7 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg02} alt="pizza" />Pizza</button>
+
+          <button onClick={() => setCategory('BREAD')} className="flex md:py-7 py-7 md:pr-0 pr-3 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg03} alt="bread" />Bread</button>
+        </div>
+
+        {allProducts.map((item) => {
+          return (
+            <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">
+              <ProductCard item={item} />
+            </section>
+          )
+        })}
+
         <section>
-          <PopularFoodsUI />
+          <FifthUi />
         </section>
 
-        <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">
-          <ProductCard />
-        </section>
 
 
       </Helmet >

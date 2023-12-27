@@ -25,7 +25,7 @@ const categoryData = [
 ]
 
 
-const Category = () => {
+const SecondUi = () => {
   return (
     <>
       {
@@ -45,4 +45,4 @@ const Category = () => {
     </>
   )
 }
-export default Category
+export default SecondUi

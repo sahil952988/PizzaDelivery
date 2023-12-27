@@ -48,10 +48,10 @@ a {
   color: #df2020;
 }
 
-.product_img {
+.product__img {
   transition: 0.4s;
 }
 
-.product_img:hover {
+.product__img:hover {
   transform: scale(1.2);
 }
