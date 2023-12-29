@@ -5,6 +5,7 @@ import FirstUi from "../components/UI/Category/FirstUI"
 import SecondUi from "../components/UI/Category/SecondUi"
 import ThirdUi from "../components/UI/Category/ThirdUi"
 import FourthUi from "../components/UI/Category/FourthUi"
+import FifthUi from "../components/UI/Category/FifthUi"
 import ProductCard from "../components/UI/Product-Card/ProductCard"
 import { useEffect, useState } from "react"
 import products from "../Assets/fake-data/products"
@@ -13,7 +14,11 @@ import products from "../Assets/fake-data/products"
 import foodCategoryImg01 from "../Assets/images/hamburger.png"
 import foodCategoryImg02 from "../Assets/images/pizza.png"
 import foodCategoryImg03 from "../Assets/images/bread.png"
-import FifthUi from "../components/UI/Category/FifthUi"
+
+import networkImg from "../Assets/images/network.png"
+
+import TestimonialSlider from "../components/UI/Slider/TestimonialSlider"
+
 
 
 
@@ -25,6 +30,14 @@ const Home = () => {
 
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
+
+  const [hotPizza, setHotPizza] = useState([]);
+
+  useEffect(() => {
+    const filteredPizza = products.filter(item => item.category === 'Pizza')
+    const slicePizza = filteredPizza.slice(0, 4)
+    setHotPizza(slicePizza)
+  }, [])
 
   useEffect(() => {
     if (category === "ALL") {
@@ -102,7 +115,29 @@ const Home = () => {
           <FifthUi />
         </section>
 
+        <container>
+          <div className="text-center text-[2.1rem] mb-5">Hot Pizza</div>
+          {hotPizza.map((item) => {
+            return (
+              <div key={item.id} className="flex">
+                <ProductCard item={item} />
+              </div>
+            )
+          })}
+        </container>
 
+        <div className="md:flex">
+          <div className="Testimonial mt-5 md:ml-10 ml-2 md:mr-10 mr-2">
+            <p className="text-[#df2020] md:text-[1.2rem] text-[1rem] md:mr-20">Testimonial</p>
+            <p className="md:text-[33.6px] text-[1.5rem] mt-5">What our <span className="text-[#df2020]"> customers</span> are saying</p>
+            <p className="text-[#777]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, commodi aut magnam incidunt facere nulla autem eum eligendi? Soluta, quas!</p>
+            <TestimonialSlider />
+          </div>
+
+          <div className="img md:mr-28">
+            <img className="w-[800px]" src={networkImg} alt="" />
+          </div>
+        </div>
 
       </Helmet >
     </>
