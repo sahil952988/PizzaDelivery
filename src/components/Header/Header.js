@@ -1,11 +1,20 @@
 
 import { NavLink } from 'react-router-dom';
 import logo from '../../Assets/images/res-logo.png'
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { cartUiActions } from '../../store/shopping-cart/cartUiSlice';
+
 const Header = () => {
-  const menuRef = useRef(null);
-  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
   let [open, setOpen] = useState(false);
+  const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  const dispatch = useDispatch();
+
+  const toggleCart = () => {
+    dispatch(cartUiActions.toggle());
+  };
+
+
   return (
     <>
       <header class="bg-white">
@@ -20,7 +29,7 @@ const Header = () => {
           </div>
 
 
-          <div ref={menuRef} onClick={toggleMenu} className="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+          <div className="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
             <div className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
               <NavLink to="/Home"><p className='hover:text-[#af2020]'>Home</p></NavLink>
               <NavLink to="/FoodDetails"><p className='hover:text-[#af2020]'>Foods</p></NavLink>
@@ -30,10 +39,14 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <button className='hover:text-[#af2020] text-[25px]'><i class="fa-solid fa-cart-shopping"></i></button>
+            <div onClick={toggleCart} className="carticon">
+              <button className='text-[25px] hover:text-[#df2020]'><i class="ri-shopping-basket-line"></i></button>
+              <span className='cart_badge absolute bg-[#df2020] text-white text-[.8rem] rounded-[50%] px-1 pr-1 mt-[-10px] ml-[-10px]'>{totalQuantity}</span>
+            </div>
+
             <button className="text-[25px] hover:text-[#af2020]"><i class="fa-solid fa-user"></i></button>
 
-            <div onClick={toggleMenu} ref={menuRef} onClick={() => setOpen(!open)} className='text-3xl cursor-pointer md:hidden'>
+            <div onClick={() => setOpen(!open)} className='text-3xl cursor-pointer md:hidden'>
               <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
             </div>
           </div>

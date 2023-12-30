@@ -103,28 +103,32 @@ const Home = () => {
           <button onClick={() => setCategory('BREAD')} className="flex md:py-7 py-7 md:pr-0 pr-3 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg03} alt="bread" />Bread</button>
         </div>
 
-        {allProducts.map((item) => {
-          return (
-            <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">
+        <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">
+          {allProducts.map((item) => {
+            return (
               <ProductCard item={item} />
-            </section>
-          )
-        })}
+
+            )
+          })}
+        </section>
 
         <section>
           <FifthUi />
         </section>
 
-        <container>
-          <div className="text-center text-[2.1rem] mb-5">Hot Pizza</div>
+
+        <div className="text-center text-[2.1rem] mb-5">Hot Pizza</div>
+        <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">
           {hotPizza.map((item) => {
             return (
-              <div key={item.id} className="flex">
+              <div key={item.id}>
                 <ProductCard item={item} />
               </div>
             )
           })}
-        </container>
+        </section>
+
+
 
         <div className="md:flex">
           <div className="Testimonial mt-5 md:ml-10 ml-2 md:mr-10 mr-2">
