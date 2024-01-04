@@ -2,7 +2,7 @@
 import Helmet from "../components/Helmet/Helmet"
 
 import FirstUi from "../components/UI/Category/FirstUI"
-import SecondUi from "../components/UI/Category/SecondUi"
+import Category from "../components/UI/Category/Category"
 import ThirdUi from "../components/UI/Category/ThirdUi"
 import FourthUi from "../components/UI/Category/FourthUi"
 import FifthUi from "../components/UI/Category/FifthUi"
@@ -18,6 +18,7 @@ import foodCategoryImg03 from "../Assets/images/bread.png"
 import networkImg from "../Assets/images/network.png"
 
 import TestimonialSlider from "../components/UI/Slider/TestimonialSlider"
+
 
 
 
@@ -77,7 +78,7 @@ const Home = () => {
         </section>
 
         <section className=" Caterogy md:grid md:grid-cols-4 md:gap-4 grid grid-cols-2 gap-4 md:ml-[150px] ml-5 md:mr-[200px] mr-5 space-x-2">
-          <SecondUi />
+          <Category />
         </section>
 
         <section>

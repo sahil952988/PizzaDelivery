@@ -4,9 +4,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice"
 
 
-
-
-
 const Carts = () => {
 
   const dispatch = useDispatch();

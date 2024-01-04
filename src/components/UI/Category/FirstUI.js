@@ -7,6 +7,7 @@ const FirstUi = () => {
   return (
     <>
       <div className="md:flex ">
+
         <div className="md:ml-20 ml-8 mt-20">
           <p className="md:ml-0 ml-5 text-[1.25rem] font-serif">Easy way to make an order</p>
 
