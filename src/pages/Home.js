@@ -95,13 +95,22 @@ const Home = () => {
 
         <div className="food_category bg-[#df2020]  flex space-x-10 justify-center rounded-[8px] md:ml-[100px] ml-2 md:mr-[100px] mr-2 ">
 
-          <button onClick={() => setCategory('ALL')} className="all_btn  pl-2 text-white cursor-pointer">All</button>
+          <button onClick={() => setCategory('ALL')}
+            className={`text-white cursor-pointer md:ml-0 ml-2 ${category === "ALL" ? "foodBtnActive text-white" : ""
+              } `}>All</button>
 
-          <button onClick={() => setCategory('BURGER')} className="flex py-7 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg01} alt="burger" />Burger</button>
+          <button onClick={() => setCategory('BURGER')} className={`
+          flex pr-3 py-2 mt-5 text-white ${category === "BURGER" ? "BurgerBtnActive" : ""
+            } `}>
+            <img className="w-7 h-6 pr-2 ml-2 mb-2" src={foodCategoryImg01} alt="burger" />Burger</button>
 
-          <button onClick={() => setCategory('PIZZA')} className="flex py-7 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg02} alt="pizza" />Pizza</button>
+          <button onClick={() => setCategory('PIZZA')} className={`flex pr-3 py-2 mt-5 text-white ${category === "PIZZA" ? "PizzaBtnActive" : ""
+            } `}>
+            <img className="w-7 h-6 pr-2 ml-2 mb-2" src={foodCategoryImg02} alt="pizza" />Pizza</button>
 
-          <button onClick={() => setCategory('BREAD')} className="flex md:py-7 py-7 md:pr-0 pr-3 text-white"><img className="w-7 h-6 pr-2" src={foodCategoryImg03} alt="bread" />Bread</button>
+          <button onClick={() => setCategory('BREAD')} className={`flex pr-2 py-2 mt-5 mr-5 text-white ${category === "BREAD" ? "BreadBtnActive" : ""
+            } `}>
+            <img className="w-7 h-6 pr-2  mb-2" src={foodCategoryImg03} alt="bread" />Bread</button>
         </div>
 
         <section className=" mt-5 md:ml-[100px] ml-2 md:mr-[85px] mr-2 md:grid md:grid-cols-4 md:gap-6 grid grid-cols-2 gap-2">

@@ -44,7 +44,7 @@ const Header = () => {
               <span className='cart_badge absolute bg-[#df2020] text-white text-[.8rem] rounded-[50%] px-1 pr-1 mt-[-10px] ml-[-10px]'>{totalQuantity}</span>
             </div>
 
-            <button className="text-[25px] hover:text-[#af2020]"><i class="fa-solid fa-user"></i></button>
+            <button className="text-[25px] hover:text-[#af2020]"><NavLink to='/Login'><i class="ri-user-line"></i></NavLink></button>
 
             <div onClick={() => setOpen(!open)} className='text-3xl cursor-pointer md:hidden'>
               <ion-icon name={open ? 'close' : 'menu'}></ion-icon>

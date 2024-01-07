@@ -42,9 +42,39 @@ a {
   transform: translateY(-15px);
 }
 
-.all_btn {
+.foodBtnActive {
   background-color: #fff !important;
   border-radius: 5px;
+  width: 50px;
+  height: 40px;
+  margin-top: 20px;
+  color: #df2020;
+}
+
+.PizzaBtnActive {
+  background-color: #fff !important;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  margin-top: 20px;
+  color: #df2020;
+}
+
+.BreadBtnActive {
+  background-color: #fff !important;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  margin-top: 20px;
+  color: #df2020;
+}
+
+.BurgerBtnActive {
+  background-color: #fff !important;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  margin-top: 20px;
   color: #df2020;
 }
 
@@ -107,4 +137,8 @@ a {
 
 .paginationBttns a:hover {
   background: #df2020;
+}
+
+input::placeholder {
+  color: gray;
 }

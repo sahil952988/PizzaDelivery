@@ -8,7 +8,7 @@ const Carts = () => {
 
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.cart.totalAmount.totalPrice)
+  const totalAmount = useSelector((state) => state.cart.totalAmount)
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle())
@@ -36,6 +36,7 @@ const Carts = () => {
 
           <div className="cart_bottom bg-[#df2020] text-white flex space-x-24">
             <h6 className="text-[1rem] font-semibold ">Subtotal: <span className="text-[1.3rem] ">{totalAmount}</span></h6>
+
             <button className="bg-white text-black px-2 h-10 w-28 cursor-pointer font-semibold rounded-[8px]"><Link to="/Checkout">Checkout</Link></button>
           </div>
         </div>

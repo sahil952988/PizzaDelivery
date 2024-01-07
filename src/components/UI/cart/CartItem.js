@@ -30,14 +30,14 @@ const CartItem = ({ item }) => {
 
 
         <div className="product_info ">
-          <div className="Product_title">{title}</div>
+          <div className="Product_title font-bold">{title}</div>
 
           <div className="flex space-x-10  mt-5">
-            <p className="text-[.8rem]">{quantity}</p>
+            <p className="text-[.8rem]">{quantity}x</p>
             <p className="text-[#df2020] text-[.9rem] font-semibold">${totalPrice}</p>
           </div>
 
-          <span onClick={deleteItem} className="delete_btn ml-[300px] font-semibold text-[1.1rem] cursor-pointer"><i class="ri-close-line"></i></span>
+          <span onClick={deleteItem} className="delete_btn md:ml-[300px] ml-[200px] font-semibold text-[1.1rem] cursor-pointer"><i class="ri-close-line"></i></span>
 
           <div className="increase_decrease flex space-x-10 rounded-[8px] bg-[#fde4e4] w-40 px-3 py-2">
             <span onClick={incrementItem} className="cursor-pointer"><i class="ri-add-line"></i></span>
