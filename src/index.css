@@ -142,3 +142,14 @@ a {
 input::placeholder {
   color: gray;
 }
+
+@media only screen and (max-width: 992px) {
+  .navigation {
+
+    display: none;
+  }
+
+  .Show_menu {
+    display: block;
+  }
+}

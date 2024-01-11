@@ -23,7 +23,7 @@ const FirstUi = () => {
           <div className="flex space-x-6 mt-5">
             <button className="hover:bg-[#212245] bg-[#df2020] text-white rounded-[15px] md:px-3 px-2 md:py-3 py-2">Order now ></button>
 
-            <NavLink to="/FoodDetails"><button className="border-2 border-[#df2020] text-[#df2020] py-3 px-2 rounded-[15px]">see all food </button></NavLink>
+            <NavLink to="/AllFoods"><button className="border-2 border-[#df2020] text-[#df2020] py-3 px-2 rounded-[15px]">see all food </button></NavLink>
           </div>
 
           <div className="flex space-x-4 mt-5">
